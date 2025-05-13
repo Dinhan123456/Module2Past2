@@ -1,15 +1,36 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
+class ClassRectangle {
+    double width, height;
+    public ClassRectangle(){
+
+    }
+    public ClassRectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+    public double area() {
+        return width * height;
+    }
+    public double perimeter() {
+        return 2 * (width + height);
+    }
+    public String display() {
+        return "Rectangle{" + "width=" + width + ", height=" + height + "}";
+    }
+}
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter width : ");
+        double width = sc.nextDouble();
+        System.out.println("Enter height : ");
+        double height = sc.nextDouble();
+        ClassRectangle rectangle = new ClassRectangle(width, height);
+        System.out.println("Area of rectangle is " + rectangle.area());
+        System.out.println("Perimeter of rectangle is " + rectangle.perimeter());
+        System.out.println("Rectangle is " + rectangle.display());
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+
     }
 }
